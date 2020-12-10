@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import AiGame from './components/gameComponents/AIgame';
+import Game from './components/gameComponents/Game';
+import HardAiGame from './components/gameComponents/HardAiGame';
+import HomePage from './components/HomePage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App () {
+    const [currentScreen, setCurrentScreen] = React.useState('homepage');
+    const [playerNames, setPlayerNames] = React.useState({
+        playerOne: '',
+        playerTwo: ''
+    });
+
+    const changeNames = (name, ofThisPlayer) => {
+        setPlayerNames(prevNames => ({
+            ...prevNames,
+            [ofThisPlayer]: name
+        }))
+    }
+
+    const renderCurrentScreen = () => {
+        if (currentScreen === 'game') {
+            return <Game setCurrentScreen={setCurrentScreen} playerNames={playerNames}/>
+        } 
+        else if(currentScreen === 'aiGame') {
+            return <AiGame setCurrentScreen={setCurrentScreen} playerNames={playerNames}/>
+        } else if(currentScreen === 'HardAiGame') {
+            return <HardAiGame setCurrentScreen={setCurrentScreen} playerNames={playerNames} />
+        } else {
+            return <HomePage setCurrentScreen={setCurrentScreen} playerNames={playerNames} changeNames={changeNames}/>
+        }
+    }
+
+    return (
+        <div>
+            {renderCurrentScreen()}
+        </div>
+    )
 }
-
-export default App;

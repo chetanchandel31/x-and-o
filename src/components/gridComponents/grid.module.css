@@ -1,0 +1,24 @@
+.container {
+    display: grid;
+    grid: 85px 85px 85px/ 85px 85px 85px;
+    gap: 5px;
+    margin: 50px auto;
+    background-color: black;
+    width: calc(3 * 85px + 2 * 5px);
+    height: calc(3 * 85px + 2 * 5px);
+}
+
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.gameInfo{
+    text-align: center;
+}
+
+.winnerCell {
+    background-color: red !important ;
+}
