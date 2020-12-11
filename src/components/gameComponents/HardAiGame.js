@@ -1,6 +1,6 @@
 import React from 'react'
 import HardAigrid from '../gridComponents/hardAiGrid';
-
+import style from '../gridComponents/grid.module.css'
 
 function AiGame(props) {
   const [data, setData] = React.useState({
@@ -50,9 +50,8 @@ function AiGame(props) {
   const playerNames = props.playerNames;
 
   return (
-  <div>
-    <button onClick={() => props.setCurrentScreen('homepage')}>End</button>
-    this is hard ai game component  <br/>
+  <div style={{textAlign: "center"}}>
+    <button className={style.endBtn} onClick={() => props.setCurrentScreen('homepage')}>End</button>
     <HardAigrid positions={data.positions}
   winner={data.winner}
   winningIndex={data.winningIndex}

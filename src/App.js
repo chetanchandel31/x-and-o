@@ -3,6 +3,7 @@ import AiGame from './components/gameComponents/AIgame';
 import Game from './components/gameComponents/Game';
 import HardAiGame from './components/gameComponents/HardAiGame';
 import HomePage from './components/HomePage';
+import style from './component.module.css';
 
 export default function App () {
     const [currentScreen, setCurrentScreen] = React.useState('homepage');
@@ -33,6 +34,9 @@ export default function App () {
 
     return (
         <div>
+            <header className={style.header}>
+                <h1>X and O's</h1>
+            </header>
             {renderCurrentScreen()}
         </div>
     )

@@ -40,11 +40,11 @@ export default function Grid (props) {
             {props.winner === ''? <h3 className={style.gameInfo}>{renderName()}({props.turn})'s turn to play</h3>: null}
             <h3 className={style.gameInfo}>
                 {props.winner === 'X' ?
-                `${props.playerNames.playerOne}(X) won`:
+                <>{`${props.playerNames.playerOne}(X) won `}<p>Click on 'end' to start another game.</p></>:
                 props.winner === 'O'?
-                `${props.playerNames.playerTwo}(O) won`:
+                <>{`${props.playerNames.playerTwo}(O) won `} <p>Click on 'end' to start another game.</p></> :
                 props.winner === 'draw'?
-                'Its a draw !':
+                <>{`Its a draw ! `} <p>Click on 'end' to start another game.</p></>:
                 null }
             </h3>
         </>

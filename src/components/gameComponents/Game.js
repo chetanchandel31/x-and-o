@@ -1,6 +1,6 @@
 import React from 'react'
 import Grid from '../gridComponents/grid';
-
+import style from '../gridComponents/grid.module.css'
 
 function Game(props) {
   const [data, setData] = React.useState({
@@ -44,8 +44,8 @@ function Game(props) {
   const playerNames = props.playerNames;
 
   return (
-  <div>
-    <button onClick={() => props.setCurrentScreen('homepage')}>End</button>
+  <div style={{textAlign:"center"}}>
+    <button className={style.endBtn} onClick={() => props.setCurrentScreen('homepage')}>End</button>
     <Grid positions={data.positions}
   playerClicks={handleClick}
   winner={data.winner}

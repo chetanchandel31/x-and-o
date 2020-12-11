@@ -1,6 +1,6 @@
 import React from 'react'
 import AIgrid from '../gridComponents/aiGrid';
-
+import style from '../gridComponents/grid.module.css'
 
 function AiGame(props) {
   const [data, setData] = React.useState({
@@ -52,9 +52,8 @@ function AiGame(props) {
   const playerNames = props.playerNames;
 
   return (
-  <div>
-    <button onClick={() => props.setCurrentScreen('homepage')}>End</button>
-    this is ai game component  <br/>
+  <div style={{textAlign: "center"}}>
+    <button className={style.endBtn} onClick={() => props.setCurrentScreen('homepage')}>End</button>
     <AIgrid positions={data.positions}
   winner={data.winner}
   winningIndex={data.winningIndex}
