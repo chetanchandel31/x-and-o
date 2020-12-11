@@ -42,7 +42,7 @@ function IntermediateAI (props) {
      return (
           <div class={style.jumbotron}>
               <div> Play against Mukesh, an Indian who has spent 169 years in Himalyan caves sharpening his cognitive skills.</div>
-              <div>In this mode he'll be playing while half asleep but he can still give you a hard time if you take him too lightly.</div>
+              <div>In this mode he won't be playing seriously but he can still give you a hard time if you take him too lightly.</div>
                <hr class={style.hr}></hr>
                 Player's Name(X): <br/> <input onChange={({target}) => props.changeNames(target.value, 'playerOne')}
                 className={style.input}
@@ -60,7 +60,7 @@ export default function HomePage (props) {
 
     return (
         <div>
-          <p>Pick who you want to play against.</p>
+          <p>Choose who you want to play against</p>
           <div className={style.containerBtn}>
                <button className={currentMode === 'twoPlayer'? style.btnSelected:  style.btn}
                onClick={() => setCurrentMode('twoPlayer')}>friend(offline)</button>
