@@ -36,6 +36,12 @@
     margin: 0.4rem 0 0 0;
 }
 
+.endBtn:active{
+    padding: 0.2rem 0.9rem;
+    background-color: #b31e1e;
+    border: solid 2px  #b31e1e;
+}
+
 .jumbotron{
     border-radius: 1rem;
     background-color: #FCD34D;

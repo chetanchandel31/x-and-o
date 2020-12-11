@@ -54,6 +54,12 @@
     margin: 0.4rem 0 0 0;
 }
 
+.playBtn:active {
+    padding: 0.2rem 0.9rem;
+    background-color: #1e3a88;
+    border: solid 2px  #1e3a88;
+}
+
 .containerCenter{
     display: block;
     text-align: center;
