@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './grid.module.css'
+import style from './grid.module.css';
 
 export default function Grid (props) {
 
@@ -35,8 +35,8 @@ export default function Grid (props) {
                 const [a, b, c] = combo;
                 if ((newBoard[a] === newBoard[b] && newBoard[a] === 'O') || (newBoard[b] === newBoard[c] && newBoard[b] === 'O') || (newBoard[c] === newBoard[a] && newBoard[c] === 'O')) {
                     const goodIndex = [a, b, c].filter(box => newBoard[box] === null);
-                    console.log(a, b, c)
-                    console.log(goodIndex)
+                    // console.log(a, b, c)
+                    // console.log(goodIndex)
                     if (goodIndex.length >= 1) winningMoves.push(goodIndex[0]);
                 }
             })
@@ -54,8 +54,8 @@ export default function Grid (props) {
                     const [a, b, c] = combo;
                     if ((newBoard[a] === newBoard[b] && newBoard[a] !== null) || (newBoard[b] === newBoard[c] && newBoard[b] !== null) || (newBoard[c] === newBoard[a] && newBoard[c] !== null)) {
                         const goodIndex = [a, b, c].filter(box => newBoard[box] === null);
-                        console.log(a, b, c)
-                        console.log(goodIndex)
+                        // console.log(a, b, c)
+                        // console.log(goodIndex)
                         if (goodIndex.length >= 1) winningMoves.push(goodIndex[0]);
                     }
                 })
@@ -90,11 +90,11 @@ export default function Grid (props) {
             {props.winner === ''? <h3 className={style.gameInfo}>{renderName()}({props.turn})'s turn to play</h3>: null}
             <h3 className={style.gameInfo}>
                 {props.winner === 'X' ?
-                <>{`${props.playerNames.playerOne}(X) won`} <p>Click on 'end' to start another game.</p> </>:
+                <>{`${props.playerNames.playerOne}(X) won`} <div>Click on 'end' to start another game.</div> </>:
                 props.winner === 'O'?
-                <>{`Mukesh(O) won`} <p>Click on 'end' to start another game.</p></>:
+                <>{`Mukesh(O) won`} <div>Click on 'end' to start another game.</div></>:
                 props.winner === 'draw'?
-                <>{'Its a draw !'} <p>Click on 'end' to start another game.</p></> :
+                <>{'Its a draw !'} <div>Click on 'end' to start another game.</div></> :
                 null }
             </h3>
         </>
